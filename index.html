@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infrolith — Managed IT Infrastructure Services</title>
+<meta name="description" content="Infrolith provides managed IT infrastructure services: cloud, on-premises, firewalls, network switching, Microsoft 365, Google Workspace and IT resource outsourcing — all under one roof.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 64'%3E%3Crect x='12' y='0' width='24' height='12' fill='%232563EB'/%3E%3Crect x='12' y='16' width='24' height='14' fill='%2314181F'/%3E%3Crect x='12' y='34' width='24' height='14' fill='%2314181F'/%3E%3Crect x='12' y='52' width='24' height='12' fill='%2314181F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --basalt:#14181F; --basalt-2:#1E242E; --stone:#F4F2EE; --stone-2:#E9E6E1;
+  --ink:#14181F; --muted:#5B6472; --muted-dark:#A7B0BE; --accent:#2563EB; --accent-dark:#1D4ED8;
+  --radius:10px; --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--stone);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15;margin:0}
+a{color:var(--accent)} a:hover{color:var(--accent-dark)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;border-radius:6px;z-index:10}
+.skip:focus{left:8px}
+
+/* Header */
+header{position:sticky;top:0;z-index:5;background:rgba(244,242,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--stone-2)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand span{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:.16em;font-size:20px}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px;flex-wrap:wrap}
+.nav ul a{color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;padding:10px 0;display:inline-block}
+.nav ul a:hover{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:14px 24px;border-radius:var(--radius);font-size:16px}
+.btn:hover{background:var(--accent-dark);color:#fff}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+
+/* Hero */
+.hero{background:var(--basalt);color:var(--stone)}
+.hero .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:center;padding-top:96px;padding-bottom:96px}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark);margin-bottom:18px;font-weight:600}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);letter-spacing:-.01em}
+.hero p{color:var(--muted-dark);font-size:19px;max-width:560px;margin:22px 0 34px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-mark{display:flex;justify-content:center}
+.hero-mark svg{width:min(240px,60%);height:auto}
+
+/* Sections */
+section{padding:96px 0}
+.section-head{max-width:680px;margin-bottom:48px}
+.section-head h2{font-size:clamp(1.9rem,3.5vw,2.6rem)}
+.section-head p{color:var(--muted);margin:14px 0 0;font-size:18px}
+
+/* Services */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--stone-2);border-radius:var(--radius);padding:28px}
+.card svg{width:32px;height:32px;stroke:var(--accent);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:20px;margin:18px 0 8px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+
+/* Approach */
+.approach{background:var(--stone-2)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px;counter-reset:step}
+.step{background:var(--stone);border-radius:var(--radius);padding:28px}
+.step .num{font-family:"Space Grotesk",sans-serif;font-weight:700;color:var(--accent);font-size:15px;letter-spacing:.1em}
+.step h3{font-size:20px;margin:10px 0 8px}
+.step p{margin:0;color:var(--muted);font-size:16px}
+
+/* Why */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:start}
+.why ul{list-style:none;padding:0;margin:0;display:grid;gap:18px}
+.why li{display:flex;gap:14px;align-items:flex-start}
+.why li svg{flex:none;width:22px;height:22px;margin-top:3px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.why li strong{display:block}
+.why li span{color:var(--muted);font-size:16px}
+.story{background:var(--basalt);color:var(--stone);border-radius:var(--radius);padding:36px}
+.story h3{font-size:24px;margin-bottom:12px}
+.story p{color:var(--muted-dark);margin:0 0 12px}
+.story p:last-child{margin:0}
+
+/* Contact */
+.contact{background:var(--basalt);color:var(--stone)}
+.contact .section-head p{color:var(--muted-dark)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
+.contact-card{background:var(--basalt-2);border-radius:var(--radius);padding:28px}
+.contact-card .label{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-dark);font-weight:600}
+.contact-card a,.contact-card p{display:block;margin:10px 0 0;color:var(--stone);font-size:18px;font-weight:500;text-decoration:none;word-break:break-word}
+.contact-card a:hover{color:#93B4F8}
+
+footer{background:var(--basalt);color:var(--muted-dark);border-top:1px solid #2A313C;padding:28px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:720px){
+  .nav ul{gap:18px}
+  section{padding:72px 0}
+  .hero .wrap{padding-top:64px;padding-bottom:64px}
+  .hero-mark{order:-1}
+  .hero-mark svg{width:120px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Infrolith home">
+      <svg width="24" height="32" viewBox="0 0 48 64" aria-hidden="true">
+        <rect x="12" y="0" width="24" height="12" fill="#2563EB"/>
+        <rect x="12" y="16" width="24" height="14" fill="#14181F"/>
+        <rect x="12" y="34" width="24" height="14" fill="#14181F"/>
+        <rect x="12" y="52" width="24" height="12" fill="#14181F"/>
+      </svg>
+      <span>INFROLITH</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">How we work</a></li>
+        <li><a href="#why">Why Infrolith</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Managed IT infrastructure services</div>
+        <h1>Infrastructure, set in stone.</h1>
+        <p>Cloud, on-premises servers, firewalls, networks, Microsoft 365, Google Workspace and skilled IT people — managed by one team, under one roof.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Talk to us</a>
+          <a class="btn ghost" href="#services">Explore services</a>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <svg viewBox="0 0 48 64" role="img" aria-label="Infrolith monolith mark">
+          <rect x="12" y="0" width="24" height="12" fill="#2563EB"/>
+          <rect x="12" y="16" width="24" height="14" fill="#E9E6E1"/>
+          <rect x="12" y="34" width="24" height="14" fill="#E9E6E1"/>
+          <rect x="12" y="52" width="24" height="12" fill="#E9E6E1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Everything your infrastructure needs</h2>
+        <p>One partner for every layer of your IT — from the network cable to the cloud.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8H7z"/></svg>
+          <h3>Managed cloud</h3>
+          <p>Design, migration, monitoring and cost control for your public and hybrid cloud environments.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>
+          <h3>On-premises infrastructure</h3>
+          <p>Servers, storage, virtualization and backup in your own data centre or server room — kept patched and running.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/></svg>
+          <h3>Firewalls &amp; network security</h3>
+          <p>Firewall setup, policy management, VPNs and continuous security monitoring to keep threats out.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-2h12v2"/></svg>
+          <h3>Network &amp; switching</h3>
+          <p>LAN, Wi-Fi and switch configuration, troubleshooting and upgrades for fast, reliable connectivity.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <h3>Microsoft 365 &amp; Google Workspace</h3>
+          <p>Email, collaboration and identity: setup, migration, user management, security settings and everyday support.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.4 5 2.8 5 5.8"/></svg>
+          <h3>IT resource outsourcing</h3>
+          <p>Skilled engineers placed with your team — short-term for projects or long-term to extend your IT department.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How we work</h2>
+        <p>A clear path from where your IT is today to infrastructure you never have to worry about.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <h3>Assess</h3>
+          <p>We review your current setup — cloud, servers, network, security and users — and agree what matters most.</p>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h3>Stabilise</h3>
+          <p>We fix the urgent gaps first: patching, backups, firewall rules and access control.</p>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h3>Manage</h3>
+          <p>We monitor and maintain everything proactively, so issues are caught before they reach your users.</p>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <h3>Improve</h3>
+          <p>Regular reviews keep your infrastructure secure, current and ready for growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap why">
+      <div>
+        <div class="section-head" style="margin-bottom:32px">
+          <h2>Why Infrolith</h2>
+        </div>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>
+            <div><strong>One team, one contract</strong><span>Cloud, on-prem, network, workplace and people — no juggling vendors.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>
+            <div><strong>Hands-on infrastructure experience</strong><span>Led by engineers with 10+ years running enterprise infrastructure.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>
+            <div><strong>Proactive, not reactive</strong><span>We monitor and maintain your systems instead of waiting for things to break.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>
+            <div><strong>Flexible engagement</strong><span>Fully managed, co-managed alongside your team, or project-based.</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="story">
+        <h3>Why the name?</h3>
+        <p><strong>Infra</strong> is for infrastructure. <strong>Lith</strong> comes from the Greek <em>lithos</em> — stone, as in monolith: a single, unbreakable block.</p>
+        <p>That is what we build for our clients: every layer of IT joined into one solid foundation that their business can stand on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Let's talk about your infrastructure</h2>
+        <p>Tell us what you run today and what's keeping you up at night. We'll reply within one business day.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="label">Email</div>
+          <a href="mailto:hello@infrolith.com">hello@infrolith.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="label">Phone</div>
+          <a href="tel:+919579271919">+91 95792 71919</a>
+        </div>
+        <div class="contact-card">
+          <div class="label">Office</div>
+          <p>Pune, Maharashtra</p>
+        </div>
+      </div>
+      <div style="margin-top:32px">
+        <a class="btn" href="mailto:hello@infrolith.com?subject=Infrastructure%20enquiry">Email us now</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="year">2026</span> Infrolith Technologies Pvt. Ltd. All rights reserved.</div>
+    <div>Managed IT infrastructure · Pune, India</div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
